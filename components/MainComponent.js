@@ -3,7 +3,6 @@ import Home from './HomeComponent';
 import About from './AboutComponent';
 import Contact from './ContactComponent';
 import Stock from './StockComponent';
-import Current from './CurrentComponent';
 import Login from './LoginComponent';
 import { View, Platform, StyleSheet, Text,ScrollView, Image } from 'react-native';
 import { createStackNavigator } from 'react-navigation-stack';
@@ -43,7 +42,7 @@ const AboutNavigator = createStackNavigator(
     {
         defaultNavigationOptions: ({navigation}) => ({
             headerStyle: {
-                backgroundColor: '#f54242'
+                backgroundColor: '#5637DD'
             },
             headerTintColor: '#fff',
             headerTitleStyle: {
@@ -105,32 +104,9 @@ const StockNavigator = createStackNavigator(
     }
 );
 
-const CurrentNavigator = createStackNavigator(
-    {
-        Current: { screen: Current }
-    },
-    {
-        defaultNavigationOptions: ({navigation}) => ({
-            headerStyle: {
-                backgroundColor: '#5637DD'
-            },
-            headerTintColor: '#fff',
-            headerTitleStyle: {
-                color: '#fff'
-            },
-            headerLeft: <Icon
-                name='exchange'
-                type='font-awesome'
-                iconStyle={styles.stackIcon}
-                onPress={() => navigation.toggleDrawer()}
-            />
-        })
-    }
-);
-
 const LoginNavigator = createStackNavigator(
     {
-        Current: { screen: Login }
+        Login: { screen: Login }
     },
     {
         defaultNavigationOptions: ({navigation}) => ({
@@ -215,22 +191,7 @@ const MainNavigator = createDrawerNavigator(
                     )
                 }
             },
-
-            Current: {
-                screen: CurrentNavigator,
-                navigationOptions: {
-                    drawerLabel: 'Currency',
-                    drawerIcon: ({tintColor}) => (
-                        <Icon
-                            name='exchange'
-                            type='font-awesome'
-                            size={24}
-                            color={tintColor}
-                        />
-                    )
-                }
-            },
-
+            
             About: {
                 screen: AboutNavigator,
                 navigationOptions: {

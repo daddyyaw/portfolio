@@ -3,7 +3,6 @@ import { View, StyleSheet, ScrollView, Image, Alert } from 'react-native';
 import { Input, CheckBox, Button, Icon } from 'react-native-elements';
 import * as SecureStore from 'expo-secure-store';
 
-
 class Login extends Component {
 
     constructor(props) {
@@ -127,11 +126,11 @@ class Login extends Component {
                             <Icon
                                 name='sign-in'
                                 type='font-awesome'
-                                color='#fff'
+                                color='#f54242'
                                 iconStyle={{marginRight: 10}}
                             />
                         }
-                        buttonStyle={{backgroundColor: '#5637DD'}}
+                        buttonStyle={{backgroundColor: '#66f542'}}
                     />
                 </View>
                 
@@ -139,6 +138,7 @@ class Login extends Component {
         );
     }
 }
+
 
 const styles = StyleSheet.create({
     container: {
